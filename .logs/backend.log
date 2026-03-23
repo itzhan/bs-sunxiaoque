@@ -1,0 +1,379 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.9)
+
+2026-03-24T01:11:32.422+08:00  INFO 99142 --- [gallery-tour] [           main] com.gallery.GalleryTourApplication       : Starting GalleryTourApplication using Java 17.0.12 with PID 99142 (/Users/itzhan/Desktop/毕业设计/孙晓鹤/backend/target/classes started by itzhan in /Users/itzhan/Desktop/毕业设计/孙晓鹤/backend)
+2026-03-24T01:11:32.423+08:00  INFO 99142 --- [gallery-tour] [           main] com.gallery.GalleryTourApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-03-24T01:11:32.922+08:00  INFO 99142 --- [gallery-tour] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-03-24T01:11:32.931+08:00  INFO 99142 --- [gallery-tour] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-24T01:11:32.931+08:00  INFO 99142 --- [gallery-tour] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-03-24T01:11:32.965+08:00  INFO 99142 --- [gallery-tour] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-24T01:11:32.965+08:00  INFO 99142 --- [gallery-tour] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 525 ms
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+Get /192.168.31.156 network interface 
+Get network interface info: name:en0 (en0)
+Initialization Sequence datacenterId:2 workerId:29
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.9 
+2026-03-24T01:11:33.412+08:00  WARN 99142 --- [gallery-tour] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 949155b4-f533-4257-aab3-a2d4cecc6276
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-03-24T01:11:33.416+08:00  INFO 99142 --- [gallery-tour] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-03-24T01:11:33.560+08:00  INFO 99142 --- [gallery-tour] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-03-24T01:11:33.565+08:00  INFO 99142 --- [gallery-tour] [           main] com.gallery.GalleryTourApplication       : Started GalleryTourApplication in 1.325 seconds (process running for 1.45)
+2026-03-24T01:11:42.202+08:00  INFO 99142 --- [gallery-tour] [nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-24T01:11:42.202+08:00  INFO 99142 --- [gallery-tour] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-24T01:11:42.203+08:00  INFO 99142 --- [gallery-tour] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c363b64] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7fb98f48] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e8ee38e] was not registered for synchronization because synchronization is not active
+2026-03-24T01:11:42.257+08:00  INFO 99142 --- [gallery-tour] [nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-24T01:11:42.357+08:00  INFO 99142 --- [gallery-tour] [nio-8080-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@240d31ad
+2026-03-24T01:11:42.358+08:00  INFO 99142 --- [gallery-tour] [nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+JDBC Connection [HikariProxyConnection@665256929 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT id,name,description,sort_order,status,create_time,update_time,deleted FROM exhibition_category WHERE deleted=0 AND (status = ?) ORDER BY sort_order ASC
+JDBC Connection [HikariProxyConnection@1593445774 wrapping com.mysql.cj.jdbc.ConnectionImpl@1c07a891] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM exhibition e WHERE e.deleted = 0
+==> Parameters: 
+==> Parameters: 1(Integer)
+<==    Columns: id, name, description, sort_order, status, create_time, update_time, deleted
+<==    Columns: total
+<==        Row: 12
+<==        Row: 1, 光影装置, 以光影为媒介的沉浸式艺术装置展览, 1, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==      Total: 1
+<==        Row: 2, 数字艺术, 数字技术驱动的当代艺术作品展, 2, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 3, 互动体验, 观众参与互动的多媒体艺术体验, 3, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 4, 摄影艺术, 光影摄影与影像创作展览, 4, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 5, 经典回顾, 经典光影艺术作品回顾展, 5, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 6, 新锐艺术, 青年艺术家新锐光影创作, 6, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e8ee38e]
+==>  Preparing: SELECT e.*, ec.name AS category_name FROM exhibition e LEFT JOIN exhibition_category ec ON e.category_id = ec.id WHERE e.deleted = 0 ORDER BY e.create_time DESC LIMIT ?
+==> Parameters: 6(Long)
+JDBC Connection [HikariProxyConnection@416557950 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM announcement WHERE deleted = 0 AND (status = ?)
+==> Parameters: 1(Integer)
+<==    Columns: total
+<==        Row: 6
+<==      Total: 1
+==>  Preparing: SELECT id,title,content,cover_image,status,top_flag,create_time,update_time,deleted FROM announcement WHERE deleted=0 AND (status = ?) ORDER BY top_flag DESC,create_time DESC LIMIT ?
+==> Parameters: 1(Integer), 5(Long)
+<==    Columns: id, title, description, cover_image, images, category_id, location, hall_name, start_date, end_date, daily_capacity, ticket_price, status, view_count, create_time, update_time, deleted, category_name
+<==    Columns: id, title, content, cover_image, status, top_flag, create_time, update_time, deleted
+<==        Row: 2, 清明节假期参观须知, <<BLOB>>, null, 1, 1, 2026-03-15 10:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 1, 光之诗篇——沉浸式光影艺术大展, <<BLOB>>, /uploads/exhibition/cover1.jpg, <<BLOB>>, 1, 光影美术馆A区, A1展厅, 2026-03-01, 2026-06-30, 300, 128.00, 2, 5862, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==        Row: 1, 光影美术馆2026年春季展览季正式开幕, <<BLOB>>, /uploads/announcement/ann1.jpg, 1, 1, 2026-03-01 09:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 5, 镜界展览预售开启, <<BLOB>>, /uploads/announcement/ann5.jpg, 1, 0, 2026-03-12 10:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 2, 数字花园——AI生成艺术展, <<BLOB>>, /uploads/exhibition/cover2.jpg, <<BLOB>>, 2, 光影美术馆B区, B1展厅, 2026-02-15, 2026-05-15, 200, 98.00, 2, 3241, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 数字艺术
+<==        Row: 3, 数字花园展览延期公告, <<BLOB>>, null, 1, 0, 2026-03-10 14:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 3, 镜界——无限反射空间体验, <<BLOB>>, /uploads/exhibition/cover3.jpg, <<BLOB>>, 3, 光影美术馆C区, C1-C3展厅, 2026-04-01, 2026-08-31, 150, 158.00, 1, 1520, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 互动体验
+<==        Row: 6, 美术馆会员体系升级公告, <<BLOB>>, null, 1, 0, 2026-03-05 16:00:00, 2026-03-17 20:23:14, 0
+<==      Total: 5
+<==        Row: 4, 影像诗学——当代摄影艺术联展, <<BLOB>>, /uploads/exhibition/cover4.jpg, <<BLOB>>, 4, 光影美术馆D区, D1展厅, 2026-03-15, 2026-05-30, 250, 68.00, 2, 2890, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 摄影艺术
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7fb98f48]
+<==        Row: 5, 回溯光年——经典光影艺术百年, <<BLOB>>, /uploads/exhibition/cover5.jpg, <<BLOB>>, 5, 光影美术馆E区, E1-E2展厅, 2026-01-10, 2026-04-10, 200, 88.00, 2, 4150, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 经典回顾
+<==        Row: 6, 流光溢彩——霓虹灯管艺术装置, <<BLOB>>, /uploads/exhibition/cover6.jpg, <<BLOB>>, 1, 光影美术馆A区, A2展厅, 2026-05-01, 2026-09-30, 180, 108.00, 1, 890, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c363b64]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cd9b43d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@303978966 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT id,name,description,sort_order,status,create_time,update_time,deleted FROM exhibition_category WHERE deleted=0 AND (status = ?) ORDER BY sort_order ASC
+==> Parameters: 1(Integer)
+<==    Columns: id, name, description, sort_order, status, create_time, update_time, deleted
+<==        Row: 1, 光影装置, 以光影为媒介的沉浸式艺术装置展览, 1, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 2, 数字艺术, 数字技术驱动的当代艺术作品展, 2, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 3, 互动体验, 观众参与互动的多媒体艺术体验, 3, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 4, 摄影艺术, 光影摄影与影像创作展览, 4, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 5, 经典回顾, 经典光影艺术作品回顾展, 5, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 6, 新锐艺术, 青年艺术家新锐光影创作, 6, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cd9b43d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38943b9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@158410953 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM exhibition e WHERE e.deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 12
+<==      Total: 1
+==>  Preparing: SELECT e.*, ec.name AS category_name FROM exhibition e LEFT JOIN exhibition_category ec ON e.category_id = ec.id WHERE e.deleted = 0 ORDER BY e.create_time DESC LIMIT ?
+==> Parameters: 9(Long)
+<==    Columns: id, title, description, cover_image, images, category_id, location, hall_name, start_date, end_date, daily_capacity, ticket_price, status, view_count, create_time, update_time, deleted, category_name
+<==        Row: 1, 光之诗篇——沉浸式光影艺术大展, <<BLOB>>, /uploads/exhibition/cover1.jpg, <<BLOB>>, 1, 光影美术馆A区, A1展厅, 2026-03-01, 2026-06-30, 300, 128.00, 2, 5862, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==        Row: 2, 数字花园——AI生成艺术展, <<BLOB>>, /uploads/exhibition/cover2.jpg, <<BLOB>>, 2, 光影美术馆B区, B1展厅, 2026-02-15, 2026-05-15, 200, 98.00, 2, 3241, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 数字艺术
+<==        Row: 3, 镜界——无限反射空间体验, <<BLOB>>, /uploads/exhibition/cover3.jpg, <<BLOB>>, 3, 光影美术馆C区, C1-C3展厅, 2026-04-01, 2026-08-31, 150, 158.00, 1, 1520, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 互动体验
+<==        Row: 4, 影像诗学——当代摄影艺术联展, <<BLOB>>, /uploads/exhibition/cover4.jpg, <<BLOB>>, 4, 光影美术馆D区, D1展厅, 2026-03-15, 2026-05-30, 250, 68.00, 2, 2890, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 摄影艺术
+<==        Row: 5, 回溯光年——经典光影艺术百年, <<BLOB>>, /uploads/exhibition/cover5.jpg, <<BLOB>>, 5, 光影美术馆E区, E1-E2展厅, 2026-01-10, 2026-04-10, 200, 88.00, 2, 4150, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 经典回顾
+<==        Row: 6, 流光溢彩——霓虹灯管艺术装置, <<BLOB>>, /uploads/exhibition/cover6.jpg, <<BLOB>>, 1, 光影美术馆A区, A2展厅, 2026-05-01, 2026-09-30, 180, 108.00, 1, 890, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==        Row: 7, 幻境之门——VR光影沉浸展, <<BLOB>>, /uploads/exhibition/cover7.jpg, <<BLOB>>, 3, 光影美术馆F区, F1展厅, 2026-06-01, 2026-10-31, 100, 168.00, 1, 650, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 互动体验
+<==        Row: 8, 像素森林——数字生态艺术展, <<BLOB>>, /uploads/exhibition/cover8.jpg, <<BLOB>>, 2, 光影美术馆G区, G1展厅, 2025-11-01, 2026-02-28, 200, 118.00, 3, 7320, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 数字艺术
+<==        Row: 9, 光影国风——传统美学与数字艺术的碰撞, <<BLOB>>, /uploads/exhibition/cover9.jpg, <<BLOB>>, 1, 光影美术馆H区, H1-H2展厅, 2026-03-20, 2026-07-20, 250, 138.00, 2, 4580, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==      Total: 9
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38943b9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@bbea138] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@21416520 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM announcement WHERE deleted = 0 AND (status = ?)
+==> Parameters: 1(Integer)
+<==    Columns: total
+<==        Row: 6
+<==      Total: 1
+==>  Preparing: SELECT id,title,content,cover_image,status,top_flag,create_time,update_time,deleted FROM announcement WHERE deleted=0 AND (status = ?) ORDER BY top_flag DESC,create_time DESC LIMIT ?
+==> Parameters: 1(Integer), 10(Long)
+<==    Columns: id, title, content, cover_image, status, top_flag, create_time, update_time, deleted
+<==        Row: 2, 清明节假期参观须知, <<BLOB>>, null, 1, 1, 2026-03-15 10:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 1, 光影美术馆2026年春季展览季正式开幕, <<BLOB>>, /uploads/announcement/ann1.jpg, 1, 1, 2026-03-01 09:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 5, 镜界展览预售开启, <<BLOB>>, /uploads/announcement/ann5.jpg, 1, 0, 2026-03-12 10:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 3, 数字花园展览延期公告, <<BLOB>>, null, 1, 0, 2026-03-10 14:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 6, 美术馆会员体系升级公告, <<BLOB>>, null, 1, 0, 2026-03-05 16:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 4, 光影美术馆志愿者招募, <<BLOB>>, null, 1, 0, 2026-02-20 09:00:00, 2026-03-17 20:23:14, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@bbea138]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ad9f02a] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c196e39] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26f4e3e0] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1390320586 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT id,name,description,sort_order,status,create_time,update_time,deleted FROM exhibition_category WHERE deleted=0 AND (status = ?) ORDER BY sort_order ASC
+==> Parameters: 1(Integer)
+JDBC Connection [HikariProxyConnection@1751385687 wrapping com.mysql.cj.jdbc.ConnectionImpl@58ad9b7c] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@2202458 wrapping com.mysql.cj.jdbc.ConnectionImpl@1c07a891] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM exhibition e WHERE e.deleted = 0
+==>  Preparing: SELECT COUNT(*) AS total FROM announcement WHERE deleted = 0 AND (status = ?)
+==> Parameters: 
+==> Parameters: 1(Integer)
+<==    Columns: total
+<==        Row: 12
+<==    Columns: id, name, description, sort_order, status, create_time, update_time, deleted
+<==      Total: 1
+<==        Row: 1, 光影装置, 以光影为媒介的沉浸式艺术装置展览, 1, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+==>  Preparing: SELECT e.*, ec.name AS category_name FROM exhibition e LEFT JOIN exhibition_category ec ON e.category_id = ec.id WHERE e.deleted = 0 ORDER BY e.create_time DESC LIMIT ?
+<==        Row: 2, 数字艺术, 数字技术驱动的当代艺术作品展, 2, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 3, 互动体验, 观众参与互动的多媒体艺术体验, 3, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+==> Parameters: 6(Long)
+<==        Row: 4, 摄影艺术, 光影摄影与影像创作展览, 4, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 5, 经典回顾, 经典光影艺术作品回顾展, 5, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 6, 新锐艺术, 青年艺术家新锐光影创作, 6, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c196e39]
+<==    Columns: id, title, description, cover_image, images, category_id, location, hall_name, start_date, end_date, daily_capacity, ticket_price, status, view_count, create_time, update_time, deleted, category_name
+<==        Row: 1, 光之诗篇——沉浸式光影艺术大展, <<BLOB>>, /uploads/exhibition/cover1.jpg, <<BLOB>>, 1, 光影美术馆A区, A1展厅, 2026-03-01, 2026-06-30, 300, 128.00, 2, 5862, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==    Columns: total
+<==        Row: 6
+<==      Total: 1
+==>  Preparing: SELECT id,title,content,cover_image,status,top_flag,create_time,update_time,deleted FROM announcement WHERE deleted=0 AND (status = ?) ORDER BY top_flag DESC,create_time DESC LIMIT ?
+<==        Row: 2, 数字花园——AI生成艺术展, <<BLOB>>, /uploads/exhibition/cover2.jpg, <<BLOB>>, 2, 光影美术馆B区, B1展厅, 2026-02-15, 2026-05-15, 200, 98.00, 2, 3241, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 数字艺术
+==> Parameters: 1(Integer), 5(Long)
+<==        Row: 3, 镜界——无限反射空间体验, <<BLOB>>, /uploads/exhibition/cover3.jpg, <<BLOB>>, 3, 光影美术馆C区, C1-C3展厅, 2026-04-01, 2026-08-31, 150, 158.00, 1, 1520, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 互动体验
+<==        Row: 4, 影像诗学——当代摄影艺术联展, <<BLOB>>, /uploads/exhibition/cover4.jpg, <<BLOB>>, 4, 光影美术馆D区, D1展厅, 2026-03-15, 2026-05-30, 250, 68.00, 2, 2890, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 摄影艺术
+<==        Row: 5, 回溯光年——经典光影艺术百年, <<BLOB>>, /uploads/exhibition/cover5.jpg, <<BLOB>>, 5, 光影美术馆E区, E1-E2展厅, 2026-01-10, 2026-04-10, 200, 88.00, 2, 4150, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 经典回顾
+<==        Row: 6, 流光溢彩——霓虹灯管艺术装置, <<BLOB>>, /uploads/exhibition/cover6.jpg, <<BLOB>>, 1, 光影美术馆A区, A2展厅, 2026-05-01, 2026-09-30, 180, 108.00, 1, 890, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ad9f02a]
+<==    Columns: id, title, content, cover_image, status, top_flag, create_time, update_time, deleted
+<==        Row: 2, 清明节假期参观须知, <<BLOB>>, null, 1, 1, 2026-03-15 10:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 1, 光影美术馆2026年春季展览季正式开幕, <<BLOB>>, /uploads/announcement/ann1.jpg, 1, 1, 2026-03-01 09:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 5, 镜界展览预售开启, <<BLOB>>, /uploads/announcement/ann5.jpg, 1, 0, 2026-03-12 10:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 3, 数字花园展览延期公告, <<BLOB>>, null, 1, 0, 2026-03-10 14:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 6, 美术馆会员体系升级公告, <<BLOB>>, null, 1, 0, 2026-03-05 16:00:00, 2026-03-17 20:23:14, 0
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26f4e3e0]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@205e56e8] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1873061544 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT id,name,description,sort_order,status,create_time,update_time,deleted FROM exhibition_category WHERE deleted=0 AND (status = ?) ORDER BY sort_order ASC
+==> Parameters: 1(Integer)
+<==    Columns: id, name, description, sort_order, status, create_time, update_time, deleted
+<==        Row: 1, 光影装置, 以光影为媒介的沉浸式艺术装置展览, 1, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 2, 数字艺术, 数字技术驱动的当代艺术作品展, 2, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 3, 互动体验, 观众参与互动的多媒体艺术体验, 3, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 4, 摄影艺术, 光影摄影与影像创作展览, 4, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 5, 经典回顾, 经典光影艺术作品回顾展, 5, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 6, 新锐艺术, 青年艺术家新锐光影创作, 6, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@205e56e8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25e4383e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1262541010 wrapping com.mysql.cj.jdbc.ConnectionImpl@1c07a891] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM exhibition e WHERE e.deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 12
+<==      Total: 1
+==>  Preparing: SELECT e.*, ec.name AS category_name FROM exhibition e LEFT JOIN exhibition_category ec ON e.category_id = ec.id WHERE e.deleted = 0 ORDER BY e.create_time DESC LIMIT ?
+==> Parameters: 9(Long)
+<==    Columns: id, title, description, cover_image, images, category_id, location, hall_name, start_date, end_date, daily_capacity, ticket_price, status, view_count, create_time, update_time, deleted, category_name
+<==        Row: 1, 光之诗篇——沉浸式光影艺术大展, <<BLOB>>, /uploads/exhibition/cover1.jpg, <<BLOB>>, 1, 光影美术馆A区, A1展厅, 2026-03-01, 2026-06-30, 300, 128.00, 2, 5862, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==        Row: 2, 数字花园——AI生成艺术展, <<BLOB>>, /uploads/exhibition/cover2.jpg, <<BLOB>>, 2, 光影美术馆B区, B1展厅, 2026-02-15, 2026-05-15, 200, 98.00, 2, 3241, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 数字艺术
+<==        Row: 3, 镜界——无限反射空间体验, <<BLOB>>, /uploads/exhibition/cover3.jpg, <<BLOB>>, 3, 光影美术馆C区, C1-C3展厅, 2026-04-01, 2026-08-31, 150, 158.00, 1, 1520, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 互动体验
+<==        Row: 4, 影像诗学——当代摄影艺术联展, <<BLOB>>, /uploads/exhibition/cover4.jpg, <<BLOB>>, 4, 光影美术馆D区, D1展厅, 2026-03-15, 2026-05-30, 250, 68.00, 2, 2890, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 摄影艺术
+<==        Row: 5, 回溯光年——经典光影艺术百年, <<BLOB>>, /uploads/exhibition/cover5.jpg, <<BLOB>>, 5, 光影美术馆E区, E1-E2展厅, 2026-01-10, 2026-04-10, 200, 88.00, 2, 4150, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 经典回顾
+<==        Row: 6, 流光溢彩——霓虹灯管艺术装置, <<BLOB>>, /uploads/exhibition/cover6.jpg, <<BLOB>>, 1, 光影美术馆A区, A2展厅, 2026-05-01, 2026-09-30, 180, 108.00, 1, 890, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==        Row: 7, 幻境之门——VR光影沉浸展, <<BLOB>>, /uploads/exhibition/cover7.jpg, <<BLOB>>, 3, 光影美术馆F区, F1展厅, 2026-06-01, 2026-10-31, 100, 168.00, 1, 650, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 互动体验
+<==        Row: 8, 像素森林——数字生态艺术展, <<BLOB>>, /uploads/exhibition/cover8.jpg, <<BLOB>>, 2, 光影美术馆G区, G1展厅, 2025-11-01, 2026-02-28, 200, 118.00, 3, 7320, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 数字艺术
+<==        Row: 9, 光影国风——传统美学与数字艺术的碰撞, <<BLOB>>, /uploads/exhibition/cover9.jpg, <<BLOB>>, 1, 光影美术馆H区, H1-H2展厅, 2026-03-20, 2026-07-20, 250, 138.00, 2, 4580, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==      Total: 9
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25e4383e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d66ffd3] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1549768028 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT id,title,description,cover_image,images,category_id,location,hall_name,start_date,end_date,daily_capacity,ticket_price,status,view_count,create_time,update_time,deleted FROM exhibition WHERE id=? AND deleted=0
+==> Parameters: 1(Long)
+<==    Columns: id, title, description, cover_image, images, category_id, location, hall_name, start_date, end_date, daily_capacity, ticket_price, status, view_count, create_time, update_time, deleted
+<==        Row: 1, 光之诗篇——沉浸式光影艺术大展, <<BLOB>>, /uploads/exhibition/cover1.jpg, <<BLOB>>, 1, 光影美术馆A区, A1展厅, 2026-03-01, 2026-06-30, 300, 128.00, 2, 5862, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d66ffd3]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@618a0552] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1131138560 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT id,exhibition_id,name,artist,era,description,cover_image,audio_url,sort_order,create_time,update_time,deleted FROM exhibit_item WHERE deleted=0 AND (exhibition_id = ?) ORDER BY sort_order ASC
+==> Parameters: 1(Long)
+<==    Columns: id, exhibition_id, name, artist, era, description, cover_image, audio_url, sort_order, create_time, update_time, deleted
+<==        Row: 1, 1, 光之瀑布, teamLab, 2024, <<BLOB>>, /uploads/items/item1_1.jpg, /uploads/audio/audio1_1.mp3, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 2, 1, 花与人的森林, teamLab, 2024, <<BLOB>>, /uploads/items/item1_2.jpg, /uploads/audio/audio1_2.mp3, 2, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 3, 1, 星辰大海, teamLab, 2025, <<BLOB>>, /uploads/items/item1_3.jpg, /uploads/audio/audio1_3.mp3, 3, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 4, 1, 水晶宇宙, teamLab, 2023, <<BLOB>>, /uploads/items/item1_4.jpg, /uploads/audio/audio1_4.mp3, 4, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==      Total: 4
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@618a0552]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2356610] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1083031287 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT id,exhibition_id,title,description,panorama_url,thumbnail,tour_type,sort_order,create_time,update_time,deleted FROM virtual_tour WHERE deleted=0 AND (exhibition_id = ?) ORDER BY sort_order ASC
+==> Parameters: 1(Long)
+<==    Columns: id, exhibition_id, title, description, panorama_url, thumbnail, tour_type, sort_order, create_time, update_time, deleted
+<==        Row: 1, 1, 光之诗篇VR全景导览, <<BLOB>>, /uploads/tour/tour1_panorama.jpg, /uploads/tour/tour1_thumb.jpg, 0, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 2, 1, 光之瀑布3D体验, <<BLOB>>, /uploads/tour/tour1_3d.glb, /uploads/tour/tour1_3d_thumb.jpg, 1, 2, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2356610]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7cdf9a2d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@544938070 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT id,exhibition_id,slot_name,start_time,end_time,max_capacity,create_time,deleted FROM time_slot WHERE deleted=0 AND (exhibition_id = ?) ORDER BY start_time ASC
+==> Parameters: 1(Long)
+<==    Columns: id, exhibition_id, slot_name, start_time, end_time, max_capacity, create_time, deleted
+<==        Row: 1, 1, 上午场 09:00-12:00, 09:00:00, 12:00:00, 100, 2026-03-17 20:23:14, 0
+<==        Row: 2, 1, 下午场 13:00-16:00, 13:00:00, 16:00:00, 100, 2026-03-17 20:23:14, 0
+<==        Row: 3, 1, 晚间场 17:00-20:00, 17:00:00, 20:00:00, 100, 2026-03-17 20:23:14, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7cdf9a2d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@623a4496] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@856468642 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM comment c WHERE c.deleted = 0 AND c.exhibition_id = ? AND c.status = ?
+==> Parameters: 1(Long), 1(Integer)
+<==    Columns: total
+<==        Row: 4
+<==      Total: 1
+==>  Preparing: SELECT c.*, u.nickname, u.avatar, e.title AS exhibition_title FROM comment c LEFT JOIN sys_user u ON c.user_id = u.id LEFT JOIN exhibition e ON c.exhibition_id = e.id WHERE c.deleted = 0 AND c.exhibition_id = ? AND c.status = ? ORDER BY c.create_time DESC LIMIT ?
+==> Parameters: 1(Long), 1(Integer), 10(Long)
+<==    Columns: id, user_id, exhibition_id, content, rating, status, create_time, deleted, nickname, avatar, exhibition_title
+<==        Row: 12, 11, 1, <<BLOB>>, 3, 1, 2026-03-17 11:00:00, 0, 黄丽, null, 光之诗篇——沉浸式光影艺术大展
+<==        Row: 1, 2, 1, <<BLOB>>, 5, 1, 2026-03-16 18:30:00, 0, 张伟, null, 光之诗篇——沉浸式光影艺术大展
+<==        Row: 2, 3, 1, <<BLOB>>, 5, 1, 2026-03-15 20:15:00, 0, 李娜, null, 光之诗篇——沉浸式光影艺术大展
+<==        Row: 3, 4, 1, <<BLOB>>, 4, 1, 2026-03-12 19:00:00, 0, 王芳, null, 光之诗篇——沉浸式光影艺术大展
+<==      Total: 4
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@623a4496]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c0ba331] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@672301089 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT id,name,description,sort_order,status,create_time,update_time,deleted FROM exhibition_category WHERE deleted=0 AND (status = ?) ORDER BY sort_order ASC
+==> Parameters: 1(Integer)
+<==    Columns: id, name, description, sort_order, status, create_time, update_time, deleted
+<==        Row: 1, 光影装置, 以光影为媒介的沉浸式艺术装置展览, 1, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 2, 数字艺术, 数字技术驱动的当代艺术作品展, 2, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 3, 互动体验, 观众参与互动的多媒体艺术体验, 3, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 4, 摄影艺术, 光影摄影与影像创作展览, 4, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 5, 经典回顾, 经典光影艺术作品回顾展, 5, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 6, 新锐艺术, 青年艺术家新锐光影创作, 6, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c0ba331]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75cab30d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1927693857 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM exhibition e WHERE e.deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 12
+<==      Total: 1
+==>  Preparing: SELECT e.*, ec.name AS category_name FROM exhibition e LEFT JOIN exhibition_category ec ON e.category_id = ec.id WHERE e.deleted = 0 ORDER BY e.create_time DESC LIMIT ?
+==> Parameters: 9(Long)
+<==    Columns: id, title, description, cover_image, images, category_id, location, hall_name, start_date, end_date, daily_capacity, ticket_price, status, view_count, create_time, update_time, deleted, category_name
+<==        Row: 1, 光之诗篇——沉浸式光影艺术大展, <<BLOB>>, /uploads/exhibition/cover1.jpg, <<BLOB>>, 1, 光影美术馆A区, A1展厅, 2026-03-01, 2026-06-30, 300, 128.00, 2, 5862, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==        Row: 2, 数字花园——AI生成艺术展, <<BLOB>>, /uploads/exhibition/cover2.jpg, <<BLOB>>, 2, 光影美术馆B区, B1展厅, 2026-02-15, 2026-05-15, 200, 98.00, 2, 3241, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 数字艺术
+<==        Row: 3, 镜界——无限反射空间体验, <<BLOB>>, /uploads/exhibition/cover3.jpg, <<BLOB>>, 3, 光影美术馆C区, C1-C3展厅, 2026-04-01, 2026-08-31, 150, 158.00, 1, 1520, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 互动体验
+<==        Row: 4, 影像诗学——当代摄影艺术联展, <<BLOB>>, /uploads/exhibition/cover4.jpg, <<BLOB>>, 4, 光影美术馆D区, D1展厅, 2026-03-15, 2026-05-30, 250, 68.00, 2, 2890, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 摄影艺术
+<==        Row: 5, 回溯光年——经典光影艺术百年, <<BLOB>>, /uploads/exhibition/cover5.jpg, <<BLOB>>, 5, 光影美术馆E区, E1-E2展厅, 2026-01-10, 2026-04-10, 200, 88.00, 2, 4150, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 经典回顾
+<==        Row: 6, 流光溢彩——霓虹灯管艺术装置, <<BLOB>>, /uploads/exhibition/cover6.jpg, <<BLOB>>, 1, 光影美术馆A区, A2展厅, 2026-05-01, 2026-09-30, 180, 108.00, 1, 890, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==        Row: 7, 幻境之门——VR光影沉浸展, <<BLOB>>, /uploads/exhibition/cover7.jpg, <<BLOB>>, 3, 光影美术馆F区, F1展厅, 2026-06-01, 2026-10-31, 100, 168.00, 1, 650, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 互动体验
+<==        Row: 8, 像素森林——数字生态艺术展, <<BLOB>>, /uploads/exhibition/cover8.jpg, <<BLOB>>, 2, 光影美术馆G区, G1展厅, 2025-11-01, 2026-02-28, 200, 118.00, 3, 7320, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 数字艺术
+<==        Row: 9, 光影国风——传统美学与数字艺术的碰撞, <<BLOB>>, /uploads/exhibition/cover9.jpg, <<BLOB>>, 1, 光影美术馆H区, H1-H2展厅, 2026-03-20, 2026-07-20, 250, 138.00, 2, 4580, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==      Total: 9
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75cab30d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6704f699] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d67384e] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@383c6856] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@107523438 wrapping com.mysql.cj.jdbc.ConnectionImpl@240d31ad] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM exhibition e WHERE e.deleted = 0
+==> Parameters: 
+JDBC Connection [HikariProxyConnection@1713148528 wrapping com.mysql.cj.jdbc.ConnectionImpl@1c07a891] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@1585339769 wrapping com.mysql.cj.jdbc.ConnectionImpl@58ad9b7c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM announcement WHERE deleted = 0 AND (status = ?)
+==>  Preparing: SELECT id,name,description,sort_order,status,create_time,update_time,deleted FROM exhibition_category WHERE deleted=0 AND (status = ?) ORDER BY sort_order ASC
+==> Parameters: 1(Integer)
+==> Parameters: 1(Integer)
+<==    Columns: total
+<==        Row: 12
+<==      Total: 1
+<==    Columns: total
+<==        Row: 6
+<==      Total: 1
+==>  Preparing: SELECT id,title,content,cover_image,status,top_flag,create_time,update_time,deleted FROM announcement WHERE deleted=0 AND (status = ?) ORDER BY top_flag DESC,create_time DESC LIMIT ?
+==>  Preparing: SELECT e.*, ec.name AS category_name FROM exhibition e LEFT JOIN exhibition_category ec ON e.category_id = ec.id WHERE e.deleted = 0 ORDER BY e.create_time DESC LIMIT ?
+==> Parameters: 1(Integer), 5(Long)
+<==    Columns: id, name, description, sort_order, status, create_time, update_time, deleted
+<==        Row: 1, 光影装置, 以光影为媒介的沉浸式艺术装置展览, 1, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+==> Parameters: 6(Long)
+<==        Row: 2, 数字艺术, 数字技术驱动的当代艺术作品展, 2, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 3, 互动体验, 观众参与互动的多媒体艺术体验, 3, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 4, 摄影艺术, 光影摄影与影像创作展览, 4, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 5, 经典回顾, 经典光影艺术作品回顾展, 5, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==        Row: 6, 新锐艺术, 青年艺术家新锐光影创作, 6, 1, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@383c6856]
+<==    Columns: id, title, content, cover_image, status, top_flag, create_time, update_time, deleted
+<==        Row: 2, 清明节假期参观须知, <<BLOB>>, null, 1, 1, 2026-03-15 10:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 1, 光影美术馆2026年春季展览季正式开幕, <<BLOB>>, /uploads/announcement/ann1.jpg, 1, 1, 2026-03-01 09:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 5, 镜界展览预售开启, <<BLOB>>, /uploads/announcement/ann5.jpg, 1, 0, 2026-03-12 10:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 3, 数字花园展览延期公告, <<BLOB>>, null, 1, 0, 2026-03-10 14:00:00, 2026-03-17 20:23:14, 0
+<==        Row: 6, 美术馆会员体系升级公告, <<BLOB>>, null, 1, 0, 2026-03-05 16:00:00, 2026-03-17 20:23:14, 0
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d67384e]
+<==    Columns: id, title, description, cover_image, images, category_id, location, hall_name, start_date, end_date, daily_capacity, ticket_price, status, view_count, create_time, update_time, deleted, category_name
+<==        Row: 1, 光之诗篇——沉浸式光影艺术大展, <<BLOB>>, /uploads/exhibition/cover1.jpg, <<BLOB>>, 1, 光影美术馆A区, A1展厅, 2026-03-01, 2026-06-30, 300, 128.00, 2, 5862, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==        Row: 2, 数字花园——AI生成艺术展, <<BLOB>>, /uploads/exhibition/cover2.jpg, <<BLOB>>, 2, 光影美术馆B区, B1展厅, 2026-02-15, 2026-05-15, 200, 98.00, 2, 3241, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 数字艺术
+<==        Row: 3, 镜界——无限反射空间体验, <<BLOB>>, /uploads/exhibition/cover3.jpg, <<BLOB>>, 3, 光影美术馆C区, C1-C3展厅, 2026-04-01, 2026-08-31, 150, 158.00, 1, 1520, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 互动体验
+<==        Row: 4, 影像诗学——当代摄影艺术联展, <<BLOB>>, /uploads/exhibition/cover4.jpg, <<BLOB>>, 4, 光影美术馆D区, D1展厅, 2026-03-15, 2026-05-30, 250, 68.00, 2, 2890, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 摄影艺术
+<==        Row: 5, 回溯光年——经典光影艺术百年, <<BLOB>>, /uploads/exhibition/cover5.jpg, <<BLOB>>, 5, 光影美术馆E区, E1-E2展厅, 2026-01-10, 2026-04-10, 200, 88.00, 2, 4150, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 经典回顾
+<==        Row: 6, 流光溢彩——霓虹灯管艺术装置, <<BLOB>>, /uploads/exhibition/cover6.jpg, <<BLOB>>, 1, 光影美术馆A区, A2展厅, 2026-05-01, 2026-09-30, 180, 108.00, 1, 890, 2026-03-17 20:23:14, 2026-03-17 20:23:14, 0, 光影装置
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6704f699]

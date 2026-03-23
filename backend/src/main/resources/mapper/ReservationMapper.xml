@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gallery.mapper.ReservationMapper">
+
+    <select id="selectPageWithDetails" resultType="com.gallery.entity.Reservation">
+        SELECT r.*, e.title AS exhibition_title, ts.slot_name, u.username
+        FROM reservation r
+        LEFT JOIN exhibition e ON r.exhibition_id = e.id
+        LEFT JOIN time_slot ts ON r.time_slot_id = ts.id
+        LEFT JOIN sys_user u ON r.user_id = u.id
+        WHERE r.deleted = 0
+        <if test="userId != null">
+            AND r.user_id = #{userId}
+        </if>
+        <if test="exhibitionId != null">
+            AND r.exhibition_id = #{exhibitionId}
+        </if>
+        <if test="status != null">
+            AND r.status = #{status}
+        </if>
+        <if test="username != null and username != ''">
+            AND u.username LIKE CONCAT('%', #{username}, '%')
+        </if>
+        ORDER BY r.create_time DESC
+    </select>
+
+</mapper>

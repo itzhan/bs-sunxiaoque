@@ -1,0 +1,10 @@
+
+> gallery-tour-frontend@1.0.0 dev /Users/itzhan/Desktop/毕业设计/孙晓鹤/frontend
+> vite --port 5173
+
+
+  VITE v6.4.1  ready in 242 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.31.156:5173/
+  ➜  Network: http://192.168.139.3:5173/

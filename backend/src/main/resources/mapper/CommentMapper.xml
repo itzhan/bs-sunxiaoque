@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gallery.mapper.CommentMapper">
+
+    <select id="selectPageWithUser" resultType="com.gallery.entity.Comment">
+        SELECT c.*, u.nickname, u.avatar, e.title AS exhibition_title
+        FROM comment c
+        LEFT JOIN sys_user u ON c.user_id = u.id
+        LEFT JOIN exhibition e ON c.exhibition_id = e.id
+        WHERE c.deleted = 0
+        <if test="exhibitionId != null">
+            AND c.exhibition_id = #{exhibitionId}
+        </if>
+        <if test="status != null">
+            AND c.status = #{status}
+        </if>
+        ORDER BY c.create_time DESC
+    </select>
+
+</mapper>

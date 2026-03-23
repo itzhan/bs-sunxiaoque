@@ -1,0 +1,15 @@
+
+> art-design-pro@0.0.0 dev /Users/itzhan/Desktop/毕业设计/孙晓鹤/admin
+> vite --open --port 6680
+
+🚀 API_URL = /
+🚀 VERSION = 3.0.2
+
+  VITE v7.1.7  ready in 2094 ms
+
+  ➜  Local:   http://localhost:6680/
+  ➜  Network: http://192.168.31.156:6680/
+  ➜  Vue DevTools: Open http://localhost:6680/__devtools__/ as a separate window
+  ➜  Vue DevTools: Press Option(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools
+1:11:35 AM [vite] (client) ✨ new dependencies optimized: @iconify/vue
+1:11:35 AM [vite] (client) ✨ optimized dependencies changed. reloading

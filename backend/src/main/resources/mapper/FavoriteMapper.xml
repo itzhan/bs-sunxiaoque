@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gallery.mapper.FavoriteMapper">
+
+    <select id="selectPageWithExhibition" resultType="com.gallery.entity.Favorite">
+        SELECT f.*, e.title AS exhibition_title, e.cover_image
+        FROM favorite f
+        LEFT JOIN exhibition e ON f.exhibition_id = e.id
+        WHERE e.deleted = 0
+        <if test="userId != null">
+            AND f.user_id = #{userId}
+        </if>
+        ORDER BY f.create_time DESC
+    </select>
+
+</mapper>
