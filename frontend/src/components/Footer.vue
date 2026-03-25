@@ -44,7 +44,6 @@ import { MapPin, Phone, Mail, Diamond } from 'lucide-vue-next'
 <style scoped>
 .footer {
   background: var(--color-primary);
-  border-top: 1px solid var(--color-border);
   margin-top: 80px;
 }
 
@@ -58,7 +57,7 @@ import { MapPin, Phone, Mail, Diamond } from 'lucide-vue-next'
   grid-template-columns: 1fr 2fr;
   gap: 48px;
   padding-bottom: 36px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
 .footer-logo {
@@ -74,11 +73,11 @@ import { MapPin, Phone, Mail, Diamond } from 'lucide-vue-next'
 .footer-logo .logo-text {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--color-text-primary);
+  color: #FFFFFF;
   letter-spacing: 2px;
 }
 .footer-desc {
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.6);
   font-size: 0.9rem;
   line-height: 1.6;
 }
@@ -99,8 +98,10 @@ import { MapPin, Phone, Mail, Diamond } from 'lucide-vue-next'
 }
 .link-group a,
 .link-group p {
-  display: block;
-  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.6);
   font-size: 0.88rem;
   margin-bottom: 10px;
   text-decoration: none;
@@ -115,7 +116,7 @@ import { MapPin, Phone, Mail, Diamond } from 'lucide-vue-next'
   padding-top: 24px;
 }
 .footer-bottom p {
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.4);
   font-size: 0.82rem;
 }
 

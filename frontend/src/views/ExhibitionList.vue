@@ -70,7 +70,7 @@
                 </div>
                 <div class="card-footer">
                   <span class="view-count"><Eye :size="14" /> {{ item.viewCount || 0 }} 浏览</span>
-                  <span class="detail-link text-accent">查看详情 <ArrowRight :size="14" /></span>
+                  <span class="detail-link">查看详情 <ArrowRight :size="14" /></span>
                 </div>
               </div>
             </div>
@@ -150,11 +150,12 @@ onMounted(async () => {
 .page-header {
   text-align: center;
   padding: 60px 0 40px;
-  background: linear-gradient(180deg, rgba(201,169,110,0.06) 0%, transparent 100%);
+  background: linear-gradient(180deg, #F5F4F0 0%, var(--color-bg-page) 100%);
 }
 .page-title {
   font-size: 2.5rem;
   font-weight: 700;
+  color: var(--color-text-primary);
 }
 .page-desc {
   color: var(--color-text-secondary);
@@ -186,11 +187,11 @@ onMounted(async () => {
   font-size: 0.88rem;
   transition: all var(--transition-fast);
 }
-.tab-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.tab-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
 .tab-btn.active {
-  background: var(--color-accent);
-  color: var(--color-primary);
-  border-color: var(--color-accent);
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
   font-weight: 600;
 }
 .search-box { width: 280px; }
@@ -228,7 +229,7 @@ onMounted(async () => {
 }
 .card-price-tag.free { background: rgba(82,196,26,0.9); }
 .card-body { padding: 20px; }
-.card-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+.card-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; color: var(--color-text-primary); }
 .card-desc { font-size: 0.88rem; color: var(--color-text-secondary); margin-bottom: 12px; line-height: 1.5; }
 .card-info { display: flex; flex-direction: column; gap: 4px; font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 12px; }
 .card-footer {
@@ -239,7 +240,7 @@ onMounted(async () => {
   border-top: 1px solid var(--color-border);
 }
 .view-count { font-size: 0.82rem; color: var(--color-text-muted); }
-.detail-link { font-size: 0.85rem; font-weight: 500; }
+.detail-link { font-size: 0.85rem; font-weight: 500; color: var(--color-accent); }
 
 .pagination-wrap { display: flex; justify-content: center; margin-top: 48px; }
 

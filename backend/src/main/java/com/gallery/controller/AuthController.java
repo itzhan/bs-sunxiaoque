@@ -24,6 +24,9 @@ public class AuthController {
 
     private LoginUser getCurrentUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null || !(auth.getPrincipal() instanceof LoginUser)) {
+            throw new RuntimeException("未登录或登录已过期");
+        }
         return (LoginUser) auth.getPrincipal();
     }
 
@@ -41,7 +44,12 @@ public class AuthController {
 
     @GetMapping("/info")
     public Result<User> info() {
-        Long userId = getCurrentUser().getId();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null || !(auth.getPrincipal() instanceof LoginUser)) {
+            return Result.error(401, "未登录或登录已过期");
+        }
+        LoginUser loginUser = (LoginUser) auth.getPrincipal();
+        Long userId = loginUser.getId();
         User user = userService.getById(userId);
         return Result.ok(user);
     }

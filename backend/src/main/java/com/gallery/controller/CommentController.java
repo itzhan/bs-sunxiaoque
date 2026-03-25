@@ -23,6 +23,9 @@ public class CommentController {
 
     private LoginUser getCurrentUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null || !(auth.getPrincipal() instanceof LoginUser)) {
+            throw new RuntimeException("未登录或登录已过期");
+        }
         return (LoginUser) auth.getPrincipal();
     }
 

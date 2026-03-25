@@ -1,5 +1,5 @@
 <template>
-  <n-config-provider :theme="darkTheme" :theme-overrides="themeOverrides">
+  <n-config-provider :theme-overrides="themeOverrides">
     <n-message-provider>
       <n-dialog-provider>
         <n-notification-provider>
@@ -15,39 +15,49 @@
 </template>
 
 <script setup lang="ts">
-import { darkTheme } from 'naive-ui'
 import type { GlobalThemeOverrides } from 'naive-ui'
 
 const themeOverrides: GlobalThemeOverrides = {
   common: {
-    primaryColor: '#c9a96e',
-    primaryColorHover: '#d4b87a',
-    primaryColorPressed: '#b8943f',
-    primaryColorSuppl: '#c9a96e',
-    bodyColor: '#0f0f1a',
-    cardColor: '#1a1a2e',
-    modalColor: '#1a1a2e',
-    popoverColor: '#1a1a2e',
-    inputColor: '#16213e',
-    tableColor: '#1a1a2e',
-    borderColor: '#2a2a45',
-    dividerColor: '#22223a',
+    primaryColor: '#1B2838',
+    primaryColorHover: '#253648',
+    primaryColorPressed: '#13202E',
+    primaryColorSuppl: '#1B2838',
+    bodyColor: '#FAFAF7',
+    cardColor: '#FFFFFF',
+    modalColor: '#FFFFFF',
+    popoverColor: '#FFFFFF',
+    inputColor: '#F5F5F2',
+    tableColor: '#FFFFFF',
+    borderColor: '#E8E6E1',
+    dividerColor: '#E8E6E1',
     borderRadius: '6px',
+    textColorBase: '#1B2838',
+    textColor1: '#1B2838',
+    textColor2: '#5A6677',
+    textColor3: '#8E99A4',
     fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif"
   },
   Button: {
-    textColorPrimary: '#1a1a2e',
+    textColorPrimary: '#FFFFFF',
     borderRadiusMedium: '6px'
   },
   Card: {
-    borderRadius: '12px',
-    borderColor: '#2a2a45'
+    borderRadius: '10px',
+    borderColor: '#E8E6E1'
   },
   Input: {
-    borderRadius: '6px'
+    borderRadius: '6px',
+    color: '#F5F5F2'
   },
   Tag: {
     borderRadius: '4px'
+  },
+  Tabs: {
+    tabTextColorLine: '#5A6677',
+    tabTextColorActiveLine: '#1B2838',
+    tabTextColorHoverLine: '#1B2838',
+    barColor: '#C7A951'
   }
 }
 </script>

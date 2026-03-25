@@ -42,7 +42,7 @@
             </div>
 
             <div class="password-card card" style="padding:32px; max-width:600px; margin-top:24px;">
-              <h3 style="margin-bottom:20px; font-size:1.1rem;">修改密码</h3>
+              <h3 style="margin-bottom:20px; font-size:1.1rem; color:var(--color-text-primary);">修改密码</h3>
               <n-form :model="pwdForm" label-placement="left" label-width="80">
                 <n-form-item label="原密码">
                   <n-input v-model:value="pwdForm.oldPassword" type="password" show-password-on="mousedown" />
@@ -223,27 +223,31 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.page-header { text-align:center; padding:60px 0 40px; }
-.page-title { font-size:2.5rem; font-weight:700; }
+.page-header {
+  text-align: center;
+  padding: 60px 0 40px;
+  background: linear-gradient(180deg, #F5F4F0 0%, var(--color-bg-page) 100%);
+}
+.page-title { font-size: 2.5rem; font-weight: 700; color: var(--color-text-primary); }
 .section { padding: 0 0 80px; }
-.loading-center { display:flex; justify-content:center; padding:40px 0; }
+.loading-center { display: flex; justify-content: center; padding: 40px 0; }
 
 /* Reservations */
-.reservation-list { display:flex; flex-direction:column; gap:16px; }
-.res-card { display:flex; justify-content:space-between; align-items:center; padding:24px; gap:16px; flex-wrap:wrap; }
-.res-info h4 { font-size:1.05rem; margin-bottom:4px; }
-.res-meta { display:flex; gap:16px; font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:4px; }
-.res-contact { font-size:0.82rem; color:var(--color-text-muted); }
-.res-actions { display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+.reservation-list { display: flex; flex-direction: column; gap: 16px; }
+.res-card { display: flex; justify-content: space-between; align-items: center; padding: 24px; gap: 16px; flex-wrap: wrap; }
+.res-info h4 { font-size: 1.05rem; margin-bottom: 4px; color: var(--color-text-primary); }
+.res-meta { display: flex; gap: 16px; font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 4px; }
+.res-contact { font-size: 0.82rem; color: var(--color-text-muted); }
+.res-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
 
 /* Favorites */
-.fav-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:20px; }
-.fav-card { cursor:pointer; overflow:hidden; }
-.fav-cover { aspect-ratio:16/10; overflow:hidden; }
-.fav-cover img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s var(--ease-out); }
-.fav-card:hover .fav-cover img { transform:scale(1.06); }
-.fav-body { padding:16px; }
-.fav-body h4 { font-size:1rem; margin-bottom:4px; }
-.fav-time { font-size:0.82rem; color:var(--color-text-muted); }
-.pagination-wrap { display:flex; justify-content:center; margin-top:32px; }
+.fav-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.fav-card { cursor: pointer; overflow: hidden; }
+.fav-cover { aspect-ratio: 16/10; overflow: hidden; }
+.fav-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease-out); }
+.fav-card:hover .fav-cover img { transform: scale(1.06); }
+.fav-body { padding: 16px; }
+.fav-body h4 { font-size: 1rem; margin-bottom: 4px; color: var(--color-text-primary); }
+.fav-time { font-size: 0.82rem; color: var(--color-text-muted); }
+.pagination-wrap { display: flex; justify-content: center; margin-top: 32px; }
 </style>

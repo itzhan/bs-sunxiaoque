@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar">
+  <header class="navbar" :class="{ scrolled: isScrolled }">
     <div class="container navbar-inner">
       <!-- Logo -->
       <router-link to="/" class="logo">
@@ -19,7 +19,7 @@
         <template v-if="userStore.isLoggedIn">
           <n-dropdown :options="userMenuOptions" @select="handleUserMenu" trigger="click">
             <div class="user-btn">
-              <n-avatar :size="32" round :style="{ backgroundColor: '#c9a96e', color: '#1a1a2e' }">
+              <n-avatar :size="32" round :style="{ backgroundColor: '#1B2838', color: '#FFFFFF' }">
                 {{ userStore.nickname?.charAt(0) || 'U' }}
               </n-avatar>
               <span class="user-name">{{ userStore.nickname }}</span>
@@ -56,7 +56,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, h } from 'vue'
+import { ref, h, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { Diamond } from 'lucide-vue-next'
 import { useUserStore } from '@/stores/user'
@@ -66,6 +66,13 @@ import { PersonOutline, LogOutOutline } from '@vicons/ionicons5'
 const router = useRouter()
 const userStore = useUserStore()
 const mobileOpen = ref(false)
+const isScrolled = ref(false)
+
+function onScroll() {
+  isScrolled.value = window.scrollY > 20
+}
+onMounted(() => window.addEventListener('scroll', onScroll))
+onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 const userMenuOptions = [
   { label: '个人中心', key: 'profile', icon: () => h(NIcon, null, { default: () => h(PersonOutline) }) },
@@ -96,9 +103,14 @@ function handleLogout() {
   right: 0;
   z-index: 1000;
   height: var(--header-height);
-  background: rgba(15,15,26,0.92);
+  background: rgba(250,250,247,0.85);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition-normal);
+}
+.navbar.scrolled {
+  border-bottom-color: var(--color-border);
+  box-shadow: 0 1px 12px rgba(0,0,0,0.04);
 }
 
 .navbar-inner {
@@ -143,8 +155,8 @@ function handleLogout() {
 }
 .nav-link:hover,
 .nav-link.active {
-  color: var(--color-accent);
-  background: rgba(201,169,110,0.08);
+  color: var(--color-primary);
+  background: rgba(27,40,56,0.06);
 }
 
 .user-area {
@@ -163,7 +175,7 @@ function handleLogout() {
   transition: background var(--transition-fast);
 }
 .user-btn:hover {
-  background: rgba(201,169,110,0.08);
+  background: rgba(27,40,56,0.06);
 }
 .user-name {
   font-size: 0.9rem;

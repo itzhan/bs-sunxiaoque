@@ -21,6 +21,9 @@ public class FavoriteController {
 
     private LoginUser getCurrentUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null || !(auth.getPrincipal() instanceof LoginUser)) {
+            throw new RuntimeException("未登录或登录已过期");
+        }
         return (LoginUser) auth.getPrincipal();
     }
 
@@ -30,6 +33,14 @@ public class FavoriteController {
             @RequestParam(defaultValue = "10") Integer size) {
         Long userId = getCurrentUser().getId();
         PageResult<Favorite> pageResult = favoriteService.listFavorites(page, size, userId);
+        return Result.ok(pageResult);
+    }
+
+    @GetMapping("/all")
+    public Result<PageResult<Favorite>> listAll(
+            @RequestParam(defaultValue = "1") Integer page,
+            @RequestParam(defaultValue = "10") Integer size) {
+        PageResult<Favorite> pageResult = favoriteService.listAllFavorites(page, size);
         return Result.ok(pageResult);
     }
 

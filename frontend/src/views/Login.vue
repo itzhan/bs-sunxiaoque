@@ -110,9 +110,9 @@ async function handleRegister() {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 30% 30%, rgba(201,169,110,0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 70%, rgba(15,52,96,0.2) 0%, transparent 50%),
-    var(--color-bg-page);
+    radial-gradient(ellipse at 30% 30%, rgba(199,169,81,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 70%, rgba(27,40,56,0.06) 0%, transparent 50%),
+    linear-gradient(135deg, #F5F4F0 0%, var(--color-bg-page) 100%);
 }
 .login-card {
   position: relative;
@@ -123,7 +123,7 @@ async function handleRegister() {
   padding: 48px 40px;
   width: 100%;
   max-width: 440px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
 }
 .login-header {
   text-align: center;
@@ -137,6 +137,7 @@ async function handleRegister() {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 8px 0 4px;
+  color: var(--color-text-primary);
 }
 .login-header p {
   color: var(--color-text-secondary);

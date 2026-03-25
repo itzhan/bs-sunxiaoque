@@ -1,50 +1,50 @@
 /* =========================================
    光影美术馆 — 设计体系
-   风格：光影艺术风（深色沉浸 + 金色点缀）
+   风格：留白极简风（深藏青 + 古典金）
    ========================================= */
 
 :root {
   /* ---- Primary 品牌色 ---- */
-  --color-primary: #1a1a2e;           /* 深夜蓝 */
-  --color-primary-light: #16213e;     /* 导航/卡片背景 */
-  --color-primary-lighter: #0f3460;   /* hover 态 */
+  --color-primary: #1B2838;           /* 深藏青 */
+  --color-primary-hover: #253648;     /* 悬浮态 */
+  --color-primary-light: #2E4057;     /* 浅一级 */
 
   /* ---- Accent 强调色 ---- */
-  --color-accent: #c9a96e;            /* 暖金色 */
-  --color-accent-light: #d4b87a;      /* 金色 hover */
-  --color-accent-dark: #b8943f;       /* 金色深色 */
+  --color-accent: #C7A951;            /* 古典金 */
+  --color-accent-hover: #D4B85E;      /* 金色 hover */
+  --color-accent-dark: #B09340;       /* 金色深 */
 
   /* ---- Surface 表面色 ---- */
-  --color-bg-page: #0f0f1a;           /* 页面背景 */
-  --color-bg-card: #1a1a2e;           /* 卡片背景 */
-  --color-bg-card-hover: #1e2240;     /* 卡片 hover */
-  --color-bg-input: #16213e;          /* 输入框背景 */
-  --color-bg-overlay: rgba(10,10,20,0.85); /* 遮罩 */
+  --color-bg-page: #FAFAF7;           /* 页面背景（暖米白） */
+  --color-bg-card: #FFFFFF;           /* 卡片背景 */
+  --color-bg-card-hover: #FEFEFE;     /* 卡片 hover */
+  --color-bg-input: #F5F5F2;          /* 输入框背景 */
+  --color-bg-overlay: rgba(27,40,56,0.6); /* 遮罩 */
 
   /* ---- Neutral 中性色 ---- */
-  --color-text-primary: #f0ece2;      /* 主文本 */
-  --color-text-secondary: #a8a4b8;    /* 副文本 */
-  --color-text-muted: #6b6880;        /* 辅助文本 */
-  --color-border: #2a2a45;            /* 边框 */
-  --color-border-light: #3a3a55;      /* 边框浅色 */
-  --color-divider: #22223a;           /* 分隔线 */
+  --color-text-primary: #1B2838;      /* 主文本（深藏青） */
+  --color-text-secondary: #5A6677;    /* 副文本（石板灰） */
+  --color-text-muted: #8E99A4;        /* 辅助文本（灰蓝） */
+  --color-border: #E8E6E1;            /* 边框 */
+  --color-border-light: #F0EEEA;      /* 边框浅色 */
+  --color-divider: #E8E6E1;           /* 分隔线 */
 
   /* ---- Semantic 语义色 ---- */
   --color-success: #52c41a;
   --color-warning: #faad14;
-  --color-error: #ff4d4f;
+  --color-error: #e85846;
   --color-info: #1890ff;
 
   /* ---- 字体 ---- */
-  --font-display: 'Noto Serif SC', serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Noto Serif SC', 'Source Serif 4', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* ---- 尺寸 ---- */
   --header-height: 72px;
   --max-width: 1280px;
   --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
 
   /* ---- 动画 ---- */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -77,12 +77,12 @@ body {
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 a:hover {
-  color: var(--color-accent-light);
+  color: var(--color-primary-hover);
 }
 
 img {
@@ -90,7 +90,7 @@ img {
   display: block;
 }
 
-/* ---- 滚动条 ---- */
+/* ---- 滚动条（中性浅色，非品牌色） ---- */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -98,11 +98,11 @@ img {
   background: var(--color-bg-page);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
+  background: #D0CEC9;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-border-light);
+  background: #B8B5AE;
 }
 
 /* ---- 工具类 ---- */
@@ -147,7 +147,7 @@ img {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ---- 卡片基础 ---- */
+/* ---- 卡片基础（中性阴影） ---- */
 .card {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
@@ -156,8 +156,8 @@ img {
 }
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
-  border-color: var(--color-accent);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  border-color: var(--color-border);
 }
 
 /* ---- 按钮 ---- */
@@ -167,8 +167,8 @@ img {
   justify-content: center;
   gap: 8px;
   padding: 12px 28px;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
-  color: var(--color-primary);
+  background: var(--color-primary);
+  color: #FFFFFF;
   border: none;
   border-radius: var(--radius-sm);
   font-weight: 600;
@@ -178,8 +178,10 @@ img {
   letter-spacing: 0.5px;
 }
 .btn-primary:hover {
-  box-shadow: 0 4px 20px rgba(201,169,110,0.35);
+  background: var(--color-primary-hover);
+  box-shadow: 0 4px 16px rgba(27,40,56,0.25);
   transform: translateY(-1px);
+  color: #FFFFFF;
 }
 
 .btn-outline {
@@ -189,8 +191,8 @@ img {
   gap: 8px;
   padding: 11px 27px;
   background: transparent;
-  color: var(--color-accent);
-  border: 1px solid var(--color-accent);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
   border-radius: var(--radius-sm);
   font-weight: 500;
   font-size: 0.95rem;
@@ -198,7 +200,8 @@ img {
   transition: all var(--transition-fast);
 }
 .btn-outline:hover {
-  background: rgba(201,169,110,0.1);
+  background: var(--color-primary);
+  color: #FFFFFF;
 }
 
 /* ---- Section 标题 ---- */
@@ -217,7 +220,7 @@ img {
   font-size: 1rem;
 }
 
-/* ---- 分割金线 ---- */
+/* ---- 分割线（古典金细线） ---- */
 .gold-line {
   width: 60px;
   height: 2px;

@@ -71,6 +71,12 @@ public class PublicController {
         return Result.ok(pageResult);
     }
 
+    @GetMapping("/announcements/{id}")
+    public Result<Announcement> getAnnouncementDetail(@PathVariable Long id) {
+        Announcement announcement = announcementService.getById(id);
+        return Result.ok(announcement);
+    }
+
     @GetMapping("/categories")
     public Result<List<ExhibitionCategory>> listCategories() {
         List<ExhibitionCategory> list = categoryService.listAll();

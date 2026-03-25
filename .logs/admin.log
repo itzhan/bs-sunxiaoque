@@ -5,11 +5,22 @@
 🚀 API_URL = /
 🚀 VERSION = 3.0.2
 
-  VITE v7.1.7  ready in 2094 ms
+  VITE v7.1.7  ready in 1059 ms
 
   ➜  Local:   http://localhost:6680/
   ➜  Network: http://192.168.31.156:6680/
+  ➜  Network: http://198.18.0.1:6680/
+  ➜  Network: http://192.168.139.3:6680/
+  ➜  Network: http://192.168.194.0:6680/
   ➜  Vue DevTools: Open http://localhost:6680/__devtools__/ as a separate window
   ➜  Vue DevTools: Press Option(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools
-1:11:35 AM [vite] (client) ✨ new dependencies optimized: @iconify/vue
-1:11:35 AM [vite] (client) ✨ optimized dependencies changed. reloading
+12:01:03 AM [vite] http proxy error: /api/auth/info
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1714:7)
+12:25:08 AM [vite] (client) hmr update /src/views/gallery/exhibit-item/index.vue, /src/assets/styles/core/tailwind.css
+12:25:10 AM [vite] (client) page reload src/router/modules/system.ts
+1:22:50 AM [vite] (client) hmr update /src/views/gallery/time-slot/index.vue, /src/assets/styles/core/tailwind.css
+1:30:51 AM [vite] (client) hmr update /src/views/gallery/exhibition/index.vue, /src/assets/styles/core/tailwind.css
+1:31:10 AM [vite] (client) page reload src/router/modules/gallery.ts
+ ELIFECYCLE  Command failed.

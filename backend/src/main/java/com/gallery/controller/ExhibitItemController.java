@@ -22,7 +22,7 @@ public class ExhibitItemController {
     public Result<PageResult<ExhibitItem>> list(
             @RequestParam(defaultValue = "1") Integer page,
             @RequestParam(defaultValue = "10") Integer size,
-            @RequestParam Long exhibitionId) {
+            @RequestParam(required = false) Long exhibitionId) {
         PageResult<ExhibitItem> pageResult = exhibitItemService.list(page, size, exhibitionId);
         return Result.ok(pageResult);
     }

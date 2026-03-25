@@ -3,7 +3,6 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
       <div class="container hero-content">
         <div class="hero-badge"><Sparkles :size="14" /> 在线导览 · 预约参观</div>
         <h1 class="hero-title font-display">
@@ -25,7 +24,7 @@
         <!-- Stats -->
         <div class="hero-stats">
           <div class="stat-item" v-for="s in stats" :key="s.label">
-            <span class="stat-value text-accent">{{ s.value }}</span>
+            <span class="stat-value">{{ s.value }}</span>
             <span class="stat-label">{{ s.label }}</span>
           </div>
         </div>
@@ -184,21 +183,15 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   overflow: hidden;
+  background: var(--color-bg-page);
 }
 .hero-bg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(201,169,110,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(15,52,96,0.3) 0%, transparent 50%),
-    linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="none" width="100" height="100"/><circle cx="50" cy="50" r="0.5" fill="rgba(201,169,110,0.15)"/></svg>');
-  background-size: 80px 80px;
-  opacity: 0.5;
+    radial-gradient(ellipse at 20% 50%, rgba(199,169,81,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(27,40,56,0.04) 0%, transparent 50%),
+    linear-gradient(180deg, #F5F4F0 0%, var(--color-bg-page) 100%);
 }
 .hero-content {
   position: relative;
@@ -207,7 +200,9 @@ onMounted(async () => {
   padding: 80px 0 60px;
 }
 .hero-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 6px 20px;
   border: 1px solid var(--color-accent);
   border-radius: 20px;
@@ -222,8 +217,12 @@ onMounted(async () => {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 24px;
+  color: var(--color-text-primary);
   animation: fadeIn 1s var(--ease-out) 0.2s forwards;
   opacity: 0;
+}
+.hero-title .text-accent {
+  color: var(--color-accent);
 }
 .hero-desc {
   color: var(--color-text-secondary);
@@ -259,6 +258,7 @@ onMounted(async () => {
   font-size: 1.8rem;
   font-weight: 700;
   font-family: var(--font-display);
+  color: var(--color-accent);
 }
 .stat-label {
   font-size: 0.85rem;
@@ -309,8 +309,8 @@ onMounted(async () => {
   left: 12px;
 }
 .card-category {
-  background: rgba(201,169,110,0.9);
-  color: var(--color-primary);
+  background: var(--color-primary);
+  color: #FFFFFF;
   padding: 4px 12px;
   border-radius: 4px;
   font-size: 0.75rem;
@@ -354,7 +354,7 @@ onMounted(async () => {
 
 /* ---- Announcements ---- */
 .announcements-section {
-  background: var(--color-primary-light);
+  background: #F5F4F0;
 }
 .announcements-list {
   max-width: 800px;
@@ -373,6 +373,7 @@ onMounted(async () => {
 .ann-icon {
   font-size: 1.4rem;
   flex-shrink: 0;
+  color: var(--color-accent);
 }
 .ann-content {
   flex: 1;
@@ -411,11 +412,13 @@ onMounted(async () => {
   padding: 32px 20px;
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
   transition: all var(--transition-normal);
 }
 .feature-item:hover {
   border-color: var(--color-accent);
-  background: rgba(201,169,110,0.04);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  transform: translateY(-4px);
 }
 .feature-icon {
   font-size: 2.5rem;
@@ -426,6 +429,7 @@ onMounted(async () => {
   font-size: 1.05rem;
   font-weight: 600;
   margin-bottom: 8px;
+  color: var(--color-text-primary);
 }
 .feature-desc {
   font-size: 0.88rem;

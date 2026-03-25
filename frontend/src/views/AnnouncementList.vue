@@ -63,8 +63,8 @@ onMounted(loadData)
 </script>
 
 <style scoped>
-.page-header { text-align:center; padding:60px 0 40px; background:linear-gradient(180deg, rgba(201,169,110,0.06), transparent); }
-.page-title { font-size:2.5rem; font-weight:700; }
+.page-header { text-align:center; padding:60px 0 40px; background:linear-gradient(180deg, #F5F4F0 0%, var(--color-bg-page) 100%); }
+.page-title { font-size:2.5rem; font-weight:700; color:var(--color-text-primary); }
 .page-desc { color:var(--color-text-secondary); font-size:1.05rem; }
 .section { padding: 0 0 80px; }
 .loading-center { display:flex; justify-content:center; padding:60px 0; }
@@ -76,9 +76,9 @@ onMounted(loadData)
 .ann-body { padding:24px; flex:1; }
 .ann-header { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
 .ann-date { font-size:0.82rem; color:var(--color-text-muted); }
-.ann-title { font-size:1.15rem; font-weight:600; margin-bottom:8px; }
+.ann-title { font-size:1.15rem; font-weight:600; margin-bottom:8px; color:var(--color-text-primary); }
 .ann-excerpt { font-size:0.88rem; color:var(--color-text-secondary); line-height:1.6; margin-bottom:12px; }
-.read-more { font-size:0.85rem; font-weight:500; }
+.read-more { font-size:0.85rem; font-weight:500; color:var(--color-accent); }
 .pagination-wrap { display:flex; justify-content:center; margin-top:48px; }
 
 @media (max-width: 640px) {

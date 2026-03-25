@@ -35,7 +35,7 @@ const announcement = ref<any>(null)
 
 onMounted(async () => {
   try {
-    const res = await request.get(`/announcements/${route.params.id}`)
+    const res = await request.get(`/public/announcements/${route.params.id}`)
     announcement.value = res.data
   } catch {} finally { loading.value = false }
 })
@@ -47,8 +47,8 @@ onMounted(async () => {
 .detail-wrap { max-width:800px; margin:0 auto; }
 .back-link { margin-bottom:24px; }
 .back-link a { color:var(--color-text-secondary); font-size:0.9rem; }
-.back-link a:hover { color:var(--color-accent); }
-.detail-title { font-size:2rem; font-weight:700; margin-bottom:12px; }
+.back-link a:hover { color:var(--color-primary); }
+.detail-title { font-size:2rem; font-weight:700; margin-bottom:12px; color:var(--color-text-primary); }
 .detail-meta { display:flex; align-items:center; gap:12px; color:var(--color-text-muted); font-size:0.88rem; margin-bottom:32px; }
 .detail-cover { margin-bottom:32px; border-radius:var(--radius-md); overflow:hidden; }
 .detail-cover img { width:100%; }

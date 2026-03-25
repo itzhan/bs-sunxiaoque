@@ -22,7 +22,7 @@ public class VirtualTourController {
     public Result<PageResult<VirtualTour>> list(
             @RequestParam(defaultValue = "1") Integer page,
             @RequestParam(defaultValue = "10") Integer size,
-            @RequestParam Long exhibitionId) {
+            @RequestParam(required = false) Long exhibitionId) {
         PageResult<VirtualTour> pageResult = virtualTourService.list(page, size, exhibitionId);
         return Result.ok(pageResult);
     }
