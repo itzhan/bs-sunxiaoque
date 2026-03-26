@@ -1,0 +1,72 @@
+name: gallery-tour
+
+services:
+  # ======== MySQL 数据库 ========
+  mysql:
+    image: mysql:8.0
+    container_name: gallery-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ab123168
+      MYSQL_DATABASE: gallery_tour
+      MYSQL_CHARSET: utf8mb4
+      MYSQL_COLLATION: utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./backend/sql/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+      - ./backend/sql/data.sql:/docker-entrypoint-initdb.d/02-data.sql:ro
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pab123168"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  # ======== Spring Boot 后端 ========
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: gallery-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/gallery_tour?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: ab123168
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - backend_uploads:/app/uploads
+
+  # ======== 用户端 (Vue3 + Naive UI) ========
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: gallery-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  # ======== 管理端 (Art Design Pro + Element Plus) ========
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    container_name: gallery-admin
+    restart: unless-stopped
+    ports:
+      - "6680:80"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:
+  backend_uploads:
