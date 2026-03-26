@@ -17,9 +17,7 @@ export function fetchGetRoleList(params: Api.SystemManage.RoleSearchParams) {
   })
 }
 
-// 获取菜单列表
+// 获取菜单列表（本项目使用前端静态路由，无需后端菜单接口）
 export function fetchGetMenuList() {
-  return request.get<AppRouteRecord[]>({
-    url: '/api/v3/system/menus/simple'
-  })
+  return Promise.resolve({ data: [] as AppRouteRecord[] })
 }
